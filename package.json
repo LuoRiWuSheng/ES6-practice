@@ -1,0 +1,21 @@
+{
+  "name": "ES6-practice",
+  "version": "1.0.0",
+  "description": "---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LuoRiWuSheng/ES6-practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LuoRiWuSheng/ES6-practice/issues"
+  },
+  "homepage": "https://github.com/LuoRiWuSheng/ES6-practice#readme",
+  "devDependencies": {}
+}
