@@ -17,5 +17,8 @@
     "url": "https://github.com/LuoRiWuSheng/ES6-practice/issues"
   },
   "homepage": "https://github.com/LuoRiWuSheng/ES6-practice#readme",
-  "devDependencies": {}
+  "devDependencies": {},
+  "dependencies": {
+    "eslint": "^5.4.0"
+  }
 }

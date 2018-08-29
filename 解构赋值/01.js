@@ -1,5 +1,5 @@
 function f() {
-    return "hello";
+	return "hello";
 }
 
 let [x = f()] = [1];
@@ -8,7 +8,7 @@ console.log(x); // 1
 
 // 下面的情况是，如果你解构右侧的是是 恒等于 ==== undefined 那么就会去执行 f() 函数，拿到对应的值；否则，将不会去调用f() 惰性求值
 let [y = f()] = [undefined];
-console.log('y-->',y); // hello
+console.log("y-->",y); // hello
 
 let [z = f()] = [null];
 
