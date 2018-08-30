@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let id = "outer";
+    function foo() {
+        let id = "inner";
+        setTimeout(()=> {
+            console.log("id",this.id);
+        },100);
+    }
+    foo(); // 箭头函数中，没有自己的this，而是引用了外层的this  如果用var声明，那么this.id就是outer
+    // 如果用let声明 this.id 就是undfined 因为使用let和const声明的内容是不会挂载到window上的
+
+    var kk = "哈哈";
+    function baz() {
+        let _this = this;
+        let kk="inner";
+
+        setTimeout(function() {
+            console.log(_this.kk); // 其实就是window.kk
+        },100);
+    }
+    baz();
+
+    // 箭头函数没有自己的this，这里的this会引用外层的this
+</script>
+</html>
