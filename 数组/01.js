@@ -7,11 +7,11 @@
 let arr = [1,22];
 function pushNum(arr,...items) {
     
-    arr.push(...items);
+	arr.push(...items);
 }
 
 function add(x,y) {
-    return x + y;
+	return x + y;
 }
 
 const number = [4,5];
