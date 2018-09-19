@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	使用mock.js模拟数据
+</body>
+<script src="mock.js"></script>
+<script>
+	let template = {
+		'name|2-5': '张三',
+		'list|1-10': [{
+			'id|+1': 1
+		}]
+	}
+	var data = Mock.mock(template)
+	console.log(data);
+
+	const promise = new Promise(function (resolve, reject) {
+		console.log('promise')
+		resolve()
+	})
+
+	promise.then(function (value) {
+		console.log("resolve")
+	
+	},()=> {
+
+	})
+
+	console.log('hi');
+</script>
+
+</html>

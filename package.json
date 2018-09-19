@@ -19,6 +19,7 @@
   "homepage": "https://github.com/LuoRiWuSheng/ES6-practice#readme",
   "devDependencies": {},
   "dependencies": {
-    "eslint": "^5.4.0"
+    "eslint": "^5.4.0",
+    "mockjs": "^1.0.1-beta3"
   }
 }
