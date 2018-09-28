@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function A() {
+
+        }
+        A.prototype.say = function() {
+            console.log(1)
+        }
+
+        var a = new A();
+
+        console.log(a.__proto__ === A.prototype)
+        console.log(A.prototype)
+        console.log(A.prototype.constructor === A) // true
+
+        /***
+         *  1、构造函数的protoptye指向原型对象
+            2、原型对象的constructor又指回构造函数
+            3、实例对象的内部属性__proto__ 指向原型对象
+         * 
+         * 
+         * /
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

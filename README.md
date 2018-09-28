@@ -41,3 +41,41 @@ baz();
 
 
 ### 对象
+
+### class类
+
+**注意**
+
+- 我们的这个 类中的方法（非静态） 方法名不要个constructor中的实例属性重名，不然，在通过  实例对象.方法名  显示 xxx方法 is not a function
+
+```js
+class Foo {
+    // 类的静态方法
+    static say() {
+        return 'hello'
+    }
+
+    // 实例属性
+    constructor(n) {
+        this.name = n
+    }
+
+    // 类的非静态方法 -- 原型上的
+    name() {
+        console.log(this.name)
+    }
+
+    say() {
+        console.log('我和静态方法重名，没事的，可以通过实例去调用')
+    }
+}
+// 实例化
+let f = new Foo('李四')
+f.name() // f.name is not a function
+
+/**
+ * 为啥？？？
+ * 因为 name和constructor中的名称重名了
+ * say方法就不会有问题
+ * /
+```
