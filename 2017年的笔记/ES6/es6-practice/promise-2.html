@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+		<script>
+			var p1 = new Promise(function(resolve,reject) {
+				console.log(resolve);
+	            $.ajax({
+	                url: "./data/arr.txt",
+	                dataType: "json",
+	                success: function(arr) {
+	                    resolve(arr);
+	                },
+	                error: function(err) {
+	                    reject(err);
+	                }
+            	});
+        	});
+        	
+        	var p2 = new Promise(function(resolve,reject) {
+				console.log(resolve);
+	            $.ajax({
+	                url: "./data/json.json",
+	                dataType: "json",
+	                success: function(arr) {
+	                    resolve(arr);
+	                },
+	                error: function(err) {
+	                    reject(err);
+	                }
+            	});
+        	});
+	
+			// Promise.all 接受一个数组作为参数
+	        Promise.all([p1,p2]).then(function(arr) {
+	        	alert("全部都成功");
+	        	console.log(arr);
+	        	// arr中包含2个结果，就是从文件中读取的
+	        	// 现在需要分解出来
+	        	let [result1,result2] = arr; // 使用解构赋值
+				alert(result1);
+				alert(result2);
+	        },function() {
+	        	alert("至少有一个失败");
+	        });
+	        
+		</script>
+		
+	</head>
+	<body>
+	</body>
+</html>
