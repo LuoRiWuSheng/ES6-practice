@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script>
+	let s1 = Symbol.for("a");
+	let s2 = Symbol.for("a");
+	console.log(s1 === s2) // true  说明s2是没有去创建Symbol的，因为Symbol.for方法会去全局搜索是否存在key为a的Symbol,存在就直接用，不存在就新建
+
+	console.log(Symbol.keyFor(s1)) // a=
+
+	let s3 = Symbol("c"); 
+	let s4 = Symbol("c"); 
+	console.log("c--》", Symbol.keyFor(s4)) // undefined
+
+</script>
+<body>
+	
+</body>
+</html>
