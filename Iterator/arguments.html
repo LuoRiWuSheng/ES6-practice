@@ -1,0 +1,18 @@
+<script>
+// 函数的类数组 arguments具备iterator接口的
+
+function fo () {
+  console.dir(arguments)
+  // 要调用next，需要执行Symbol.iterator去拿到遍历器对象
+  var a = arguments[Symbol.iterator]()
+  console.log(a.next())
+
+  // 调用for...of遍历
+  for(let item of arguments) {
+    console.log(item)
+  }
+}
+
+fo(1, 2, 3, 4, 5, 6)
+
+</script>

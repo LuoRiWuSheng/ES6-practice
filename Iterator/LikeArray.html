@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>焦恩俊</li>
+    <li>刘德华</li>
+    <li>任达华</li>
+    <li>章子怡</li>
+  </ul>
+  <script>
+    var nodeList = document.querySelectorAll('li')
+
+    // 通过展开对象，将类数组变成真正的数组，具备 iterator接口
+    /*
+    方式一
+    var arr = [...nodeList]
+
+    for(let i of arr) {
+      console.log(i.innerText)
+    }
+     console.log(arr)
+    */
+
+    /*
+    方式二
+    在原型链上挂部署这个属性
+     nodeList.__proto__[Symbol.iterator]  = Array.prototype[Symbol.iterator];
+
+      for(let i of nodeList) {
+        console.log(i.innerText)
+      }
+    */
+
+
+    /*
+      方式三
+      和方式二是一样的，数组执行那个，最终会去原型链上查找
+    nodeList.__proto__[Symbol.iterator] = [][Symbol.iterator];
+    for(let i of nodeList) {
+        console.log(i.innerText)
+    }
+    */
+
+    /**
+     * 类数组
+     *    - 有length 属性
+     *    - 可以通过数组下标去访问
+     *    - 不具备数组的方法 forEach,filter, pop 等
+     * */
+
+     // 构建一个类数组的对象
+     let likeArr = {
+       0: 'a',
+       1: 'b',
+       2: 'c',
+       length: 3,
+       [Symbol.iterator]: Array.prototype[Symbol.iterator]
+     }
+
+     // 使用for...of遍历
+     for(let j of likeArr) {
+       console.log(j)
+     }
+
+     // 普通对象部署Symbol.iterator是不生效的
+
+  </script>
+</body>
+</html>
